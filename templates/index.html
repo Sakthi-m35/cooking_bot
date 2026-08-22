@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cooking Assistant - domain specific AI chatbot">
+  <title>Dishly AI | Cooking Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <main class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">🍳</div>
+        <div>
+          <h1>Dishly <span>AI</span></h1>
+          <p>Smart Cooking Companion</p>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="status"><span></span> COOKING FOCUSED</div>
+        <h2>Turn ingredients into ideas worth serving.</h2>
+        <p>Ask for recipes, techniques, substitutions, meal ideas and kitchen troubleshooting.</p>
+      </div>
+
+      <div class="topic-list">
+        <p class="label">QUICK IDEAS</p>
+        <button class="topic" data-question="Give me an easy South Indian breakfast recipe.">🥞 South Indian Breakfast</button>
+        <button class="topic" data-question="Give me a simple chicken biryani recipe for 4 people.">🍗 Chicken Biryani</button>
+        <button class="topic" data-question="What can I cook with potatoes, onions and tomatoes?">🥔 Pantry Ingredients</button>
+        <button class="topic" data-question="How can I make soft and fluffy chapati?">🫓 Soft Chapati</button>
+        <button class="topic" data-question="Give me a quick vegetarian dinner idea.">🥗 Quick Veg Dinner</button>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="secure"><span></span> Gemini via secure Flask backend</div>
+        <small>No Firebase • No database</small>
+      </div>
+    </aside>
+
+    <section class="chat-panel">
+      <header class="chat-header">
+        <div class="mobile-brand">
+          <div class="brand-mark small">🍳</div>
+          <strong>Dishly AI</strong>
+        </div>
+        <div class="header-copy">
+          <span class="eyebrow">COOKING ASSISTANT</span>
+          <h2>Good food starts with a good idea.</h2>
+        </div>
+        <button id="clearChat" class="icon-btn" title="Clear chat" aria-label="Clear chat">↺</button>
+      </header>
+
+      <div id="chatMessages" class="chat-messages">
+        <div class="welcome-card">
+          <div class="welcome-icon">🥘</div>
+          <div>
+            <span class="eyebrow">WELCOME TO DISHLY</span>
+            <h3>What are we cooking today?</h3>
+            <p>Ask about recipes, ingredients, substitutions, baking, Indian cuisine, meal planning, kitchen techniques or cooking problems.</p>
+          </div>
+        </div>
+
+        <div class="suggestions">
+          <button data-question="How do I make restaurant-style paneer butter masala?">Paneer Butter Masala</button>
+          <button data-question="What is the best substitute for eggs in a cake?">Egg substitutes</button>
+          <button data-question="Why does my rice become sticky and how can I fix it?">Fix sticky rice</button>
+        </div>
+      </div>
+
+      <div class="composer-wrap">
+        <div class="composer">
+          <textarea id="messageInput" rows="1" placeholder="Ask a cooking question..." aria-label="Message"></textarea>
+          <button id="sendButton" class="send-btn" aria-label="Send message">
+            <span>Cook it</span>
+            <b>➜</b>
+          </button>
+        </div>
+        <div class="composer-note">
+          <span>🔒 Your API key stays on the server.</span>
+          <span>Enter ↵ to send • Shift + Enter for new line</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
